@@ -1,0 +1,6 @@
+FROM nginx
+# COPY ./Presentacion/ /usr/share/nginx/html
+WORKDIR /home
+RUN apt-get update && apt-get install git -y && git clone https://github.com/kcadena/test1 
+RUN mv ./test1/* /usr/share/nginx/html && service nginx restart 
+WORKDIR /usr/share/nginx/html

@@ -1,0 +1,14 @@
+version: "3.8"
+services: 
+    pres:
+        build: 
+            context: ./
+            dockerfile: DockerFile
+        image: xpl:v1
+        # volumes: 
+        #     - ./Presentacion/:/usr/share/nginx/html
+        working_dir: 
+            /usr/share/nginx/html
+        ports: 
+            - 8080:80
+        tty: true
